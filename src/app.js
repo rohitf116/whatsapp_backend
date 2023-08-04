@@ -8,6 +8,10 @@ import compression from "compression";
 import multer from "multer";
 import cors from "cors";
 import logger from "./configs/logger.config.js";
+import createHttpError from "http-errors";
+import router from "./routes/index.js";
+import { globalErrorHandler } from "./controllers/error.controller.js";
+import { AppError } from "./utils/error.utils.js";
 
 dotenv.config();
 //create express app
@@ -39,7 +43,14 @@ app.use(multer().any());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send(req.body);
+  throw createHttpError.BadRequest("This is invalid");
 });
+
+app.use("/api/v1", router);
+app.use(async (req, res, next) => {
+  next(new AppError("This route not found", 404));
+});
+
+app.use(globalErrorHandler);
 
 export default app;

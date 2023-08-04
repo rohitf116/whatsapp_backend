@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import compression from "compression";
 import multer from "multer";
 import cors from "cors";
+import logger from "./configs/logger.config.js";
 
 dotenv.config();
 //create express app

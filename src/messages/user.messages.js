@@ -1,6 +1,7 @@
 import {
   alreadyInUse,
   lenOfStr,
+  notFound,
   pleaseProvide,
   pleaseProvideValid,
 } from "./index.js";
@@ -15,3 +16,4 @@ export const pleaseProvideValidEmail = pleaseProvideValid("email address");
 export const pleaseProvidePassword = pleaseProvide("password");
 export const minPasswordLen = lenOfStr("password", 6);
 export const maxPasswordLen = lenOfStr("password", 128, "less than");
+export const userNotFound = notFound("user");

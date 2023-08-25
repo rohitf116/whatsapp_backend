@@ -11,6 +11,7 @@ connect(MONGO_URL, {
 })
   .then(() => logger.info("MongoDB connected"))
   .catch((err) => logger.error(err));
+s;
 const server = app.listen(PORT, () => {
   logger.info(`Listing on port: ${PORT}`);
 });

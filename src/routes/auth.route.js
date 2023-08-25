@@ -13,7 +13,7 @@ router.route("/register").post(register);
 router.route("/login").post(login);
 router.route("/logout").post(logout);
 router.route("/refreshtoken").get(refreshToken);
-router.route("/test").get(authMiddleware, (req, res) => {
+router.route("/test").get((req, res) => {
   console.log(req.user);
   res.send("From test middleware");
 });

@@ -61,6 +61,7 @@ export const login = catchAsync(async (req, res, next) => {
     path: "/api/v1/auth/refreshtoken",
     maxAge: 30 * 24 * 60 * 60 * 1000,
   });
+  console.log(response);
   responseJson(res, 200, response);
 });
 export const logout = catchAsync(async (req, res, next) => {

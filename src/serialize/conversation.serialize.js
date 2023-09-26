@@ -1,7 +1,13 @@
 export const createOrOpenConversationRespone = (data) => {
-  // const { _id, name, email, picture, status } = data;
   return {
     message: "conversation opened succesfully",
+    conversation: data?.convoExist || data,
+  };
+};
+
+export const fetchedConversationRespone = (data) => {
+  return {
+    message: "conversation fetched succesfully",
     conversation: data,
   };
 };

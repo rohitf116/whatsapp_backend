@@ -7,7 +7,7 @@ import cookieParser from "cookie-parser";
 import compression from "compression";
 import multer from "multer";
 import cors from "cors";
-import logger from "./configs/logger.config.js";
+
 import createHttpError from "http-errors";
 import router from "./routes/index.js";
 import { globalErrorHandler } from "./controllers/error.controller.js";

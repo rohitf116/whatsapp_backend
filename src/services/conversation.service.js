@@ -64,3 +64,14 @@ export const getUserConversations = async (_id) => {
 
   return conversations;
 };
+
+export const updateLatestMessage = async (convo_id, newMessage) => {
+  const updatedConvo = await ConverSationModel.findOneAndUpdate(
+    { _id: convo_id },
+    { latestMessage: newMessage }
+  );
+  if (!updatedConvo) {
+    throw new AppError("Unable to update convo", 400);
+  }
+  return true;
+};
